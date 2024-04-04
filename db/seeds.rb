@@ -1,9 +1,3 @@
-# Do we want to delete existing data each time
-# we run the seed file? If so, uncomment lines 4 & 5
-
-#Space.destroy_all
-#User.destroy_all
-
 require 'faker'
 
 # We needed to add users to run this seed file because
@@ -84,15 +78,15 @@ end
 
 
 puts " "
-puts "_🚗_🚙_🏎️_🚕_🚓_🛵_🚗_🚙_🏎️_🚕__🚗_🚙"
+puts "_🚗_🚙_🏎️_🚕_🚓_🛵_🚗_🚙_🏎️_🚕_🚗_"
 puts " "
 sleep(1)
-puts "       Hi Yumi & Tara !!"
+puts "    Hi Yumi & Tara & Matt !!"
 puts " "
 sleep(1)
-puts "    20 x spaces created 👍"
+puts "     20 x spaces created 👍"
 puts " "
 sleep(1)
-puts "_🚗_🚙_🏎️_🚕_🚓_🛵_🚗_🚙_🏎️_🚕__🚗_🚙"
+puts "_🚙_🏎️_🚕_🚓_🛵_🚗_🚙_🏎️_🚕__🚗_🚙"
 puts " "
 sleep(1)
