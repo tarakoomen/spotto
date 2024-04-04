@@ -1,0 +1,12 @@
+<h1>All our car 🚗 and (motor)bike 🚲 🏍️ spaces</h1>
+
+<div>
+  <% @spaces.each do |space| %>
+    <%= render space %>
+    <p>
+      <%= link_to "Show this space", space %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New space", new_space_path %>
