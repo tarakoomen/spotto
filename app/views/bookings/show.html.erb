@@ -1,0 +1,50 @@
+<h1>Bookings#show</h1>
+<p>Find me in app/views/bookings/show.html.erb</p>
+
+<div>
+  <p>
+    <strong>Start Date:</strong>
+    <%= booking.start %>
+  </p>
+
+  <p>
+    <strong>End Date:</strong>
+    <%= booking.end %>
+  </p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= booking.space.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= booking.space.description %>
+  </p>
+
+  <p>
+    <strong>Location:</strong>
+    <%= booking.space.location %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= booking.space.price %>
+  </p>
+
+  <p>
+    <strong>Space Location:</strong>
+    <%= booking.space.location %>
+  </p>
+
+  <div class="map-container">
+    <%= image_tag("generic_map.png", class: "map-image") %>
+  </div>
+</div>
+
+<div>
+  <%= link_to "Edit this booking", edit_booking_path(@booking) %> |
+  <%= link_to "Back to bookings", bookings_path %>
+
+  <%= button_to "Cancel this booking", @booking, method: :delete %>
+</div>
