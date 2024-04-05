@@ -1,6 +1,7 @@
 <%= render @space %>
 
 <div>
+  <%= link_to "Book this space", new_space_booking_path(@space) %>
   <%= link_to "Edit this space", edit_space_path(@space) %> |
   <%= link_to "Back to spaces", spaces_path %>
 
