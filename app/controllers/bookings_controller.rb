@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :set_space, only: [:new, :create]
+
   def index
     @bookings = Booking.all
   end
@@ -8,10 +10,11 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = @space.bookings.new(booking_params)
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path, notice: 'Booking was successfully created.'
     else
+
       render :new, status: :unprocessable_entity
     end
   end
@@ -42,6 +45,10 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start, :end, :space_id)
+    params.require(:booking).permit(:start, :end)
+  end
+
+  def set_space
+    @space = Space.find(params[:space_id])
   end
 end
