@@ -13,6 +13,6 @@ class Booking < ApplicationRecord
   def start_must_be_before_end
     return unless start && self.end
 
-    errors.add(:start, "must be before end") if start >= self.end
+    errors.add(:start, "can't be after the end date") if start > self.end
   end
 end
