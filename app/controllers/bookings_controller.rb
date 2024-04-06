@@ -10,11 +10,12 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = @space.bookings.new(booking_params)
+    @booking = Booking.new(booking_params)
+    @booking.space_id = @space.id
+    @booking.user = current_user
     if @booking.save
       redirect_to bookings_path, notice: 'Booking was successfully created.'
     else
-
       render :new, status: :unprocessable_entity
     end
   end
