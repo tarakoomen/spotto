@@ -1,35 +1,21 @@
-<h1>Manage your personal car spaces 🚗 </h1>
-
-<div class="container">
-  <div class="row row-cols-1 row-cols-md-2 g-4 m-2 justify-content-center">
-    <% @spaces.each do |space| %>
-    <div class="card m-4 bg-white box-shadow border-0" style="width: 23rem;">
-      <div class="card-body">
-        <%= render space %>
-        <p>
-          <%= link_to "Show this space", space %>
-        </p>
-      </div>
-    </div>
-    <% end %>
-  </div>
-      <%= link_to "New space", new_space_path %>
-
-
 <% @spaces = Space.where(user_id: current_user) %>
   <% if @spaces.any? %>
-    <h1>Manage your personal car spaces 🚗 </h1>
-      <div>
-        <% @spaces.each do |space| %>
-          <%= render space %>
-          <p>
-            <%= link_to "Show this space", space %>
-          </p>
-        <% end %>
-      </div>
-       <%= link_to "My Car Space listings", spaces_path, class: "dropdown-item" %>
+      <div class="container">
+       <h1>Manage your personal car spaces 🚗 </h1>
+        <div class="row row-cols-1 row-cols-md-2 g-4 m-2 justify-content-center">
+          <% @spaces.each do |space| %>
+            <div class="card m-4 bg-white box-shadow border-0" style="width: 23rem;">
+              <div class="card-body">
+              <%= render space %>
+              <p>
+                <%= link_to "Show this space", space %>
+              </p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+        <%= link_to "My Car Space listings", spaces_path, class: "dropdown-item" %>
      <% else %>
-        <span class="dropdown-item-text">You currently don't have any car spaces listed. Do you want to create a new listing? <%= link_to "Create a new listing", new_space_path %></span>
-  <% end %>
-
-</div>
+      <span class="dropdown-item-text">You currently don't have any car spaces listed. Do you want to create a new listing? <%= link_to "Create a new listing", new_space_path %></span>
+      <% end %>
+  </div>

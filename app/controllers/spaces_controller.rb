@@ -1,12 +1,6 @@
 class SpacesController < ApplicationController
   def index
     @spaces = Space.where(user_id: current_user)
-      if @spaces.any?
-        link_to "My Car Space listings", spaces_path
-      else
-        "You currently don't have any car spaces listed. Do you want to create a new listing?"
-        link_to "Create a new listing", new_space_path
-      end
   end
 
   def new
