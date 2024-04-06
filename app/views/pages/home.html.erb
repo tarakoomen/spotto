@@ -8,3 +8,19 @@ https://cdn.pixabay.com/photo/2018/01/18/20/56/auto-3091234_1280.jpg  );">
     <p>Where Finding Your Perfect Parking Spot is Just the Beginning of Your Urban Adventure!</p>
 <%= link_to "Start now", spaces_path, class: "btn btn-gradient" %>  </div>
 </div>
+
+<div class="container">
+  <h1>Check out some of our car spaces 🚗 </h1>
+  <div class="row row-cols-1 row-cols-md-2 g-4 m-2 justify-content-center">
+    <% @spaces.each do |space| %>
+      <div class="card m-4 bg-white box-shadow border-0" style="width: 23rem;">
+        <div class="card-body">
+        <%= render space %>
+        <p>
+          <%= link_to "Show this space", space %>
+        </p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
