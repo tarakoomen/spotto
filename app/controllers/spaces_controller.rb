@@ -1,6 +1,6 @@
 class SpacesController < ApplicationController
   def index
-    @spaces = Space.all
+    @spaces = Space.where(user_id: current_user)
   end
 
   def new
@@ -9,8 +9,6 @@ class SpacesController < ApplicationController
 
   def show
     @space = Space.find(params[:id])
-    # @favourite = Favourite.new
-    # @booking = Booking.new
   end
 
   def create
