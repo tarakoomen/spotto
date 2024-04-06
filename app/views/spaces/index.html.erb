@@ -14,8 +14,8 @@
           </div>
           <% end %>
         </div>
-        <%= link_to "My Car Space listings", spaces_path, class: "dropdown-item" %>
      <% else %>
-      <span class="dropdown-item-text">You currently don't have any car spaces listed. Do you want to create a new listing? <%= link_to "Create a new listing", new_space_path %></span>
+      <span class="dropdown-item-text">You currently don't have any car spaces listed. Do you want to create a new listing?</span>
+      <%= link_to "Create a new listing", new_space_path %>
       <% end %>
   </div>
