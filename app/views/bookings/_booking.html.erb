@@ -1,21 +1,30 @@
 <div>
+  <%# <p>
+    <strong>Name:</strong>
+    <%= @space.name %>
+
   <p>
-    <strong>Date:</strong>
+    <strong>Start date:</strong>
     <%= booking.start %>
   </p>
 
   <p>
-    <strong>Name:</strong>
-    <%= booking.name %>
+    <strong>End date:</strong>
+    <%= booking.end %>
   </p>
 
   <p>
-    <strong>Location:</strong>
-    <%= booking.location %>
+    <strong>Description</strong>
+    <%= booking.description %>
   </p>
 
-  <div class="map-container">
-  <%= image_tag("generic_map.png", class: "map-image") %>
+  <p>
+    <strong>Price:</strong>
+    <%= booking.price %>
+  </p>
+
+<div class="map-container">
+  <%= image_tag("generic_map.png", class: "map-image", style: "border-radius: 50%; width: 70px; height: 70px;") %>
 </div>
 
 </div>

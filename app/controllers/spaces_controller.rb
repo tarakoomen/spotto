@@ -1,6 +1,6 @@
 class SpacesController < ApplicationController
   def index
-    @spaces = Space.all
+    @spaces = Space.where(user_id: current_user)
   end
 
   def new
@@ -9,12 +9,11 @@ class SpacesController < ApplicationController
 
   def show
     @space = Space.find(params[:id])
-    # @favourite = Favourite.new
-    # @booking = Booking.new
   end
 
   def create
     @space = Space.new(space_params)
+    @space.user = current_user
     if @space.save
       redirect_to space_path(@space)
     else

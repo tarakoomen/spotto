@@ -1,44 +1,38 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<h1>Bookings Details</h1>
 
 <div>
   <p>
     <strong>Start Date:</strong>
-    <%= booking.start %>
+    <%= @booking.start %>
   </p>
 
   <p>
     <strong>End Date:</strong>
-    <%= booking.end %>
+    <%= @booking.end %>
   </p>
 
   <p>
     <strong>Name:</strong>
-    <%= booking.space.name %>
+    <%= @booking.space.name %>
   </p>
 
   <p>
     <strong>Description:</strong>
-    <%= booking.space.description %>
+    <%= @booking.space.description %>
   </p>
 
   <p>
     <strong>Location:</strong>
-    <%= booking.space.location %>
+    <%= @booking.space.location %>
   </p>
 
   <p>
     <strong>Price:</strong>
-    <%= booking.space.price %>
-  </p>
-
-  <p>
-    <strong>Space Location:</strong>
-    <%= booking.space.location %>
+    <%= @booking.space.price %>
   </p>
 
   <div class="map-container">
-    <%= image_tag("generic_map.png", class: "map-image") %>
+  <%= image_tag("generic_map.png", class: "map-image", style: "border-radius: 50%; width: 120px; height: `120`px;") %>
   </div>
 </div>
 
