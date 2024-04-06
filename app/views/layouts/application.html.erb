@@ -14,9 +14,9 @@
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <%= yield %>
-    <% if user_signed_in? %>
-     <h2>Hi <%= current_user.email %> welcome backe to Spotto</h2>
-    <% end %>
+    <%# <% if user_signed_in? %>
+     <%# <h2>Hi <%= current_user.email welcome back to Spotto</h2> %>
+    <%# <% end %>
 
     <%= render "shared/footer" %>
 
