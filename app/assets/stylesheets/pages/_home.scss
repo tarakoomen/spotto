@@ -1,14 +1,15 @@
-.main-container{
-  margin-bottom: 100px;
+.main-container {
+  margin-bottom: 80px;
   flex: 1;
 }
+
 body {
-  min-height: 100vh; /* ←コンテンツの高さの最小値＝ブラウザの高さに指定 */
-    position: relative;/* ←相対位置 */
-    padding-bottom: 60px
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 60px;
 }
-// 飛び出す
-.card {
+// card
+.home-card {
   position: relative;
   width: 350px;
   height: 300px;
@@ -16,14 +17,14 @@ body {
   border: 0.5px solid #e9eaea;
   border-radius: 3px;
 
-  .content-img img {
+  .home-content-img img {
     padding: 2em 0;
-  text-align: center;
-  background: #e1f3ff;
-  border-radius: 30ppx;
+    text-align: center;
+    background: #e1f3ff;
+    border-radius: 30px;
   }
 
-  .card-body {
+  .home-card-body {
     position: absolute;
     bottom: -35%;
     left: 0;
@@ -31,18 +32,18 @@ body {
     padding: 0.4em 0;
     background: #fff;
     transition: 0.3s;
-    visibility: hidden; /* 初めは非表示 */
+    visibility: hidden;
     opacity: 0;
     pointer-events: none;
   }
 
-  &:hover .card-body {
-    bottom: 0; /* クリックされたときに表示 */
+  &:hover .home-card-body {
+    bottom: 0;
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
   }
-
+// i will fix
   .card-title,
   .card-text {
     padding: 0 0.3em;
@@ -52,18 +53,16 @@ body {
   }
 }
 
-// Specific CSS for your home-page
 .banner {
   background-size: cover;
   background-position: center bottom;
   padding: 150px 0;
   height: 400px;
 
-
   strong {
     margin: 0;
     color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     font-size: 32px;
     font-weight: bold;
   }
@@ -71,8 +70,8 @@ body {
   p {
     font-size: 20px;
     color: white;
-    opacity: .7;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    opacity: 0.7;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -85,7 +84,7 @@ body {
   transition: background 0.3s ease;
   border: 1px solid #0F60C4;
 
-  .btn-gradient:hover {
+  &:hover {
     background: linear-gradient(#147EFF, #0F67DA);
     color: white;
   }
