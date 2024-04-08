@@ -1,4 +1,5 @@
 //Don't delete it because it's basic CSS.
+
 .main-container {
   margin-bottom: 80px;
   flex: 1;
@@ -9,6 +10,7 @@ body {
   position: relative;
   padding-bottom: 60px;
 }
+
 // Specific CSS for your home-page
 .banner {
   background-size: cover;
@@ -56,7 +58,7 @@ body {
   cursor: pointer;
   border: 0.5px solid #e9eaea;
   border-radius: 3px;
-
+  
   .content-img img {
     padding: 2em 0;
   text-align: center;
@@ -77,6 +79,7 @@ body {
     pointer-events: none;
   }
 
+
   &:hover .card-body {
     bottom: 0; /* クリックされたときに表示 */
     visibility: visible;
@@ -84,6 +87,9 @@ body {
     pointer-events: auto;
   }
 
+
+
+// i will fix
   .card-title,
   .card-text {
     padding: 0 0.3em;
@@ -93,6 +99,7 @@ body {
   }
 }
 
+
 // Specific CSS for your home-page
 .banner {
   background-size: cover;
@@ -100,11 +107,10 @@ body {
   padding: 150px 0;
   height: 400px;
 
-
   strong {
     margin: 0;
     color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     font-size: 32px;
     font-weight: bold;
   }
@@ -112,8 +118,8 @@ body {
   p {
     font-size: 20px;
     color: white;
-    opacity: .7;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    opacity: 0.7;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -126,7 +132,7 @@ body {
   transition: background 0.3s ease;
   border: 1px solid #0F60C4;
 
-  .btn-gradient:hover {
+  &:hover {
     background: linear-gradient(#147EFF, #0F67DA);
     color: white;
   }

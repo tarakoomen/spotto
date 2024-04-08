@@ -1,4 +1,6 @@
 class SpacesController < ApplicationController
+  before_action :set_space, only: %i[ show edit update destroy ]
+
   def index
     @spaces = Space.where(user_id: current_user)
   end
@@ -8,7 +10,6 @@ class SpacesController < ApplicationController
   end
 
   def show
-    @space = Space.find(params[:id])
   end
 
   def create
@@ -25,12 +26,23 @@ class SpacesController < ApplicationController
   end
 
   def update
+    if @space.update(space_params)
+      redirect_to @space, notice: "Space was successfully updated.", status: :see_other
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
+    @space.destroy!
+    redirect_to spaces_url, notice: "Space was successfully destroyed.", status: :see_other
   end
 
   private
+
+  def set_space
+    @space = Space.find(params[:id])
+  end
 
   def space_params
     params.require(:space).permit(:name, :description, :location, :price)
