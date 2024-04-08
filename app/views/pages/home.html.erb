@@ -8,21 +8,19 @@ https://cdn.pixabay.com/photo/2018/01/18/20/56/auto-3091234_1280.jpg  );">
     <p>Where Finding Your Perfect Parking Spot is Just the Beginning of Your Urban Adventure!</p>
 <%= link_to "Start now", spaces_path, class: "btn btn-gradient" %>  </div>
 </div>
-
-
 <div id="carouselExample" class="carousel slide m-3" data-bs-ride="carousel">
-  <div class="carousel-inner">
+  <div class="carousel-inner ">
     <% adjusted_spaces = @spaces.each_slice(3).to_a.flatten %>
     <% adjusted_spaces.each_slice(3) do |spaces_slice| %>
       <div class="carousel-item <%= 'active' if spaces_slice == adjusted_spaces.first(3) %>">
-        <div class="row justify-content-center"> <!-- カードを横に並べるために追加 -->
+        <div class="row justify-content-center"> <!-- Add cards to line up side by side -->
           <% spaces_slice.each do |space| %>
-            <div class="col mb-3"> <!-- カラムを追加 -->
-              <div class="card"> <!-- カードを追加 -->
-                <div class="content-img">
+            <div class="col mb-3 col-12 col-md-6 col-lg-4"> <!-- add colmes -->
+              <div class="home-card"> <!-- add cards -->
+                <div class="home-content-img">
                   <img src="https://cdn.pixabay.com/photo/2014/07/31/00/30/vw-beetle-405876_1280.jpg" class="card-img-top" alt="...">
                 </div>
-                <div class="card-body">
+                <div class="home-card-body">
                   <h5 class="card-title"><%= space.name %></h5>
                   <p class="card-text"><%= space.description %></p>
                   <%= link_to "Show this space", space %>
