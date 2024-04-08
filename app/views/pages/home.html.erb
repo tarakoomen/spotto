@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 <div class="main-container">
-=======
->>>>>>> master
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
 url(https://cdn.pixabay.com/photo/2018/01/18/20/56/auto-3091234_1280.jpg);">
   <div class="container">
@@ -11,45 +8,47 @@ url(https://cdn.pixabay.com/photo/2018/01/18/20/56/auto-3091234_1280.jpg);">
   </div>
 </div>
 
-<div class="container">
+<%# <div class="container">
   <h1>Check out some of our car spaces 🚗 </h1>
   <div class="row row-cols-1 row-cols-md-2 g-4 m-2 justify-content-center">
     <% @spaces.each do |space| %>
-      <div class="card m-4 bg-white box-shadow border-0" style="width: 23rem;">
-      <%= image_tag("driveway.jpg", class: "card-img-top") %>
-        <div class="card-body">
-          <div>
-            <h5 class="card-title">
-              <%= space.name %>
-            </h5>
+      <%# <div class="card m-4 bg-white box-shadow border-0" style="width: 23rem;"> %>
+      <%# <%= image_tag("driveway.jpg", class: "card-img-top") %>
+        <%# <div class="card-body"> %>
+          <%# <div> %>
+            <%# <h5 class="card-title"> %>
+              <%# <%= space.name %>
+            <%# </h5> %>
 
-            <h6 class="card-text">
-              <%= space.location %>
-            </h6>
+            <%# <h6 class="card-text"> %>
+              <%# <%= space.location %>
+            <%# </h6> %>
 
-            <h6 class="card-subtitle mb-2 text-muted">
-              $<%= space.price %>
-            </h6>
-          </div>
-        <p><%= link_to "More info", space, class:"card-link" %></p>
-      </div>
-    </div>
-    <% end %>
-  </div>
-</div>
+            <%# <h6 class="card-subtitle mb-2 text-muted"> %>
+              <%# $<%= space.price %>
+            <%# </h6> %>
+          <%# </div> %>
+        <%# <p><%= link_to "More info", space, class:"card-link" %></p>
+      <%# </div> %>
+    <%# </div> %>
+    <%# <% end %>
+  <%# </div> %>
+<%# </div> %>
+
+
 <div id="carouselExample" class="carousel slide m-3" data-bs-ride="carousel">
-  <div class="carousel-inner ">
+  <div class="carousel-inner">
     <% adjusted_spaces = @spaces.each_slice(3).to_a.flatten %>
     <% adjusted_spaces.each_slice(3) do |spaces_slice| %>
       <div class="carousel-item <%= 'active' if spaces_slice == adjusted_spaces.first(3) %>">
-        <div class="row justify-content-center"> <!-- Add cards to line up side by side -->
+        <div class="row justify-content-center"> <!-- カードを横に並べるために追加 -->
           <% spaces_slice.each do |space| %>
-            <div class="col mb-3 col-12 col-md-6 col-lg-4"> <!-- add colmes -->
-              <div class="home-card"> <!-- add cards -->
-                <div class="home-content-img">
+            <div class="col mb-3"> <!-- カラムを追加 -->
+              <div class="card"> <!-- カードを追加 -->
+                <div class="content-img">
                   <img src="https://cdn.pixabay.com/photo/2014/07/31/00/30/vw-beetle-405876_1280.jpg" class="card-img-top" alt="...">
                 </div>
-                <div class="home-card-body">
+                <div class="card-body">
                   <h5 class="card-title"><%= space.name %></h5>
                   <p class="card-text"><%= space.description %></p>
                   <%= link_to "Show this space", space %>
