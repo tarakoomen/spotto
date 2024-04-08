@@ -1,15 +1,68 @@
-// Specific CSS for your home-page
+.main-container {
+  margin-bottom: 80px;
+  flex: 1;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 60px;
+}
+// card
+.home-card {
+  position: relative;
+  width: 350px;
+  height: 300px;
+  cursor: pointer;
+  border: 0.5px solid #e9eaea;
+  border-radius: 3px;
+
+  .home-content-img img {
+    padding: 2em 0;
+    text-align: center;
+    background: #e1f3ff;
+    border-radius: 30px;
+  }
+
+  .home-card-body {
+    position: absolute;
+    bottom: -35%;
+    left: 0;
+    width: 100%;
+    padding: 0.4em 0;
+    background: #fff;
+    transition: 0.3s;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:hover .home-card-body {
+    bottom: 0;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+// i will fix
+  .card-title,
+  .card-text {
+    padding: 0 0.3em;
+    margin: 0;
+    font-size: 0.8em;
+    line-height: 1.5;
+  }
+}
+
 .banner {
   background-size: cover;
   background-position: center bottom;
   padding: 150px 0;
   height: 400px;
 
-
   strong {
     margin: 0;
     color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     font-size: 32px;
     font-weight: bold;
   }
@@ -17,8 +70,8 @@
   p {
     font-size: 20px;
     color: white;
-    opacity: .7;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    opacity: 0.7;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -31,7 +84,7 @@
   transition: background 0.3s ease;
   border: 1px solid #0F60C4;
 
-  .btn-gradient:hover {
+  &:hover {
     background: linear-gradient(#147EFF, #0F67DA);
     color: white;
   }
