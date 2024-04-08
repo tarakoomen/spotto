@@ -2,6 +2,11 @@
 
 <div>
   <p>
+    <strong>Name:</strong>
+    <%= @booking.space.name %>
+  </p>
+
+  <p>
     <strong>Start Date:</strong>
     <%= @booking.start %>
   </p>
@@ -9,11 +14,6 @@
   <p>
     <strong>End Date:</strong>
     <%= @booking.end %>
-  </p>
-
-  <p>
-    <strong>Name:</strong>
-    <%= @booking.space.name %>
   </p>
 
   <p>
@@ -27,8 +27,8 @@
   </p>
 
   <p>
-    <strong>Price:</strong>
-    <%= @booking.space.price %>
+    <strong>Price per day:</strong>
+    $<%= @booking.space.price %>
   </p>
 
   <div class="map-container">
