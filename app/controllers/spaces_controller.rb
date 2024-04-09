@@ -2,7 +2,7 @@ class SpacesController < ApplicationController
   before_action :set_space, only: %i[ show edit update destroy ]
 
   def index
-    @spaces = Space.where(user_id: current_user)
+    @spaces = Space.all
   end
 
   def new

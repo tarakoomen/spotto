@@ -1,6 +1,7 @@
-<h1>Editing space</h1>
+<h1>Edit this listing</h1>
 
-<%= render "form", space: @space %>
+<%= render "form", space: @space, button_text: "edit listing" %>
+
 <%= link_to "Delete this car space listing", @space,
     data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
     class: "ms-3 text-danger"
