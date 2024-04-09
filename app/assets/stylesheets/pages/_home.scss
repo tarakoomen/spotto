@@ -35,6 +35,12 @@ body {
   }
 }
 
+@media(min-width: 992px) {
+  .banner {
+    background-position: 50% 60%;
+  }
+}
+
 .btn-gradient {
   color: white;
   padding: 8px 24px;
@@ -58,7 +64,7 @@ body {
   cursor: pointer;
   border: 0.5px solid #e9eaea;
   border-radius: 3px;
-  
+
   .content-img img {
     padding: 2em 0;
   text-align: center;
@@ -79,15 +85,12 @@ body {
     pointer-events: none;
   }
 
-
   &:hover .card-body {
     bottom: 0; /* クリックされたときに表示 */
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
   }
-
-
 
 // i will fix
   .card-title,
@@ -96,30 +99,6 @@ body {
     margin: 0;
     font-size: 0.8em;
     line-height: 1.5;
-  }
-}
-
-
-// Specific CSS for your home-page
-.banner {
-  background-size: cover;
-  background-position: center bottom;
-  padding: 150px 0;
-  height: 400px;
-
-  strong {
-    margin: 0;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    font-size: 32px;
-    font-weight: bold;
-  }
-
-  p {
-    font-size: 20px;
-    color: white;
-    opacity: 0.7;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }
 }
 
