@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
+  get "my_spaces", to: "pages#my_spaces"
+
   resources :spaces do
     resources :favourites, only: [:index, :new, :create]
     resources :bookings, only: [:new, :create]
