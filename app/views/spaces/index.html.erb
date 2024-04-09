@@ -1,7 +1,7 @@
 <% @spaces = Space.where(user_id: current_user) %>
   <% if @spaces.any? %>
       <div class="container">
-       <h1>Manage your personal car spaces 🚗 </h1>
+       <h1>Manage your personal car spaces</h1>
         <div class="row row-cols-1 row-cols-md-2 g-4 m-2 justify-content-center">
           <% @spaces.each do |space| %>
             <div class="card m-4 bg-white box-shadow border-0" style="width: 23rem;">
@@ -31,6 +31,7 @@
             </div>
           </div>
           <% end %>
+          <%= link_to "Add an additional car space listing", new_space_path %>
         </div>
      <% else %>
       <span class="dropdown-item-text">You currently don't have any car spaces listed. Do you want to create a new listing?</span>
