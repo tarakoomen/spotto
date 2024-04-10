@@ -1,12 +1,31 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $spotto-sand;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 40px;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+#spotto_nav_text {
+  color: white;
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow:
+    0 0 2px black,
+    4px 4px 2px black;
+  display: inline;
+  vertical-align: middle;
+}
+
+#spotto_sml_logo {
+  height: 75px;
+  width: auto;
+  margin-right: 22px;
 }

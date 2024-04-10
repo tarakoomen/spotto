@@ -1,44 +1,34 @@
+<h3 class="home-intro">Welcome to <strong class="spotto-hl-text">SPOTTO</strong> where finding your perfect parking spot is just the beginning of your urban adventure</h3>
+
 <div class="main-container">
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2018/01/18/20/56/auto-3091234_1280.jpg);">
   <div class="container">
-    <p>Welcome to <strong>Spotto</strong> </p>
-    <p style="width: 40%">Where Finding Your Perfect Parking Spot is Just the Beginning of Your Urban Adventure!</p>
-    <%= link_to "Start your search", spaces_path, class: "btn btn-gradient" %>
+    <div class="slider-container">
+      <div class="slider-group">
+        <% @spaces.each do |space| %>
+          <div class="card">
+            <div class="content-img">
+              <img src="https://cdn.pixabay.com/photo/2014/07/31/00/30/vw-beetle-405876_1280.jpg" class="card-img-top" alt="...">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= space.name %>
+              </h5>
+              <h6 class="card-text">
+                <%= space.location %>
+              </h6>
+                <div class="card-button">
+                  <%= link_to "Check out this space", space, class: "button" %>
+                </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
-<div id="carouselExample" class="carousel slide m-3" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <% adjusted_spaces = @spaces.each_slice(3).to_a.flatten %>
-    <% adjusted_spaces.each_slice(3) do |spaces_slice| %>
-      <div class="carousel-item <%= 'active' if spaces_slice == adjusted_spaces.first(3) %>">
-        <div class="row justify-content-center"> <!-- カードを横に並べるために追加 -->
-          <% spaces_slice.each do |space| %>
-            <div class="col mb-3"> <!-- カラムを追加 -->
-              <div class="card"> <!-- カードを追加 -->
-                <div class="content-img">
-                  <img src="https://cdn.pixabay.com/photo/2014/07/31/00/30/vw-beetle-405876_1280.jpg" class="card-img-top" alt="a lightblue beetle in front of a house">
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title"><%= space.name %></h5>
-                  <p class="card-text"><%= space.location %></p>
-                  <p class="card-text">$<%= space.price %></p>
-                  <%= link_to "More info about this  car space", space %>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+<h3 class="home-intro">And this is just a small selection of the many car spots and various spaces that the <strong class="spotto-hl-text">SPOTTO</strong> community is conveniently offering to share with you today. Click below to see our search our complete listings and find your perfect parking solution today.</h3>
+
+<div class="button-container">
+  <%= link_to "Oh yeah! Let's find a Spot!", root_path, class: "big-button" %>
 </div>

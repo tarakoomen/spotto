@@ -12,3 +12,9 @@
 @import "pages/index";
 
 @import "spaces/index";
+
+body {
+  background-color: $spotto-grey;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+}
