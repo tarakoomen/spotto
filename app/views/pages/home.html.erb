@@ -7,7 +7,11 @@
         <% @spaces.each do |space| %>
           <div class="card">
             <div class="content-img">
-              <img src="https://cdn.pixabay.com/photo/2014/07/31/00/30/vw-beetle-405876_1280.jpg" class="card-img-top" alt="...">
+              <% if space.image_url.present? %>
+                <%= image_tag space.image_url, class: "card-img-top", alt: "..." %>
+              <% else %>
+                <p>No image available</p>
+              <% end %>
             </div>
             <div class="card-body">
               <h5 class="card-title">
@@ -16,9 +20,9 @@
               <h6 class="card-text">
                 <%= space.location %>
               </h6>
-                <div class="card-button">
-                  <%= link_to "Check out this space", space, class: "button" %>
-                </div>
+              <div class="card-button">
+                <%= link_to "Check out this space", space, class: "button" %>
+              </div>
             </div>
           </div>
         <% end %>
@@ -26,6 +30,7 @@
     </div>
   </div>
 </div>
+
 
 <h3 class="home-intro">This is just a small selection of the many car spots and various spaces that the <strong class="spotto-hl-text">SPOTTO</strong> community is conveniently offering to share with you. Click below to see the complete listings and find your perfect parking solution today.</h3>
 
