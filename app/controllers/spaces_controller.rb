@@ -9,9 +9,6 @@ class SpacesController < ApplicationController
     @space = Space.new
   end
 
-  def show
-  end
-
   def create
     @space = Space.new(space_params)
     @space.user = current_user
@@ -22,12 +19,15 @@ class SpacesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def edit
   end
 
   def update
     if @space.update(space_params)
-      redirect_to @space, notice: "Space was successfully updated.", status: :see_other
+      redirect_to @space, notice: "This space was successfully updated.", status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
@@ -45,6 +45,6 @@ class SpacesController < ApplicationController
   end
 
   def space_params
-    params.require(:space).permit(:name, :description, :location, :price)
+    params.require(:space).permit(:name, :description, :location, :price, :photo)
   end
 end

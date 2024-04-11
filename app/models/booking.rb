@@ -5,8 +5,8 @@ class Booking < ApplicationRecord
   validates :start, presence: true
   validates :end, presence: true
   validate :start_must_be_before_end
-  validates :space_id, presence: true
-  validates :user_id, presence: true
+  # validates :space_id, presence: true
+  # validates :user_id, presence: true
 
   private
 

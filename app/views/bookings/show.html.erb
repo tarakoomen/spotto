@@ -1,44 +1,41 @@
-<h1>Bookings Details</h1>
-
-<div>
-  <p>
-    <strong>Name:</strong>
-    <%= @booking.space.name %>
-  </p>
-
-  <p>
-    <strong>Start Date:</strong>
-    <%= @booking.start %>
-  </p>
-
-  <p>
-    <strong>End Date:</strong>
-    <%= @booking.end %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= @booking.space.description %>
-  </p>
-
-  <p>
-    <strong>Location:</strong>
-    <%= @booking.space.location %>
-  </p>
-
-  <p>
-    <strong>Price per day:</strong>
-    $<%= @booking.space.price %>
-  </p>
-
-  <div class="map-container">
-  <%= image_tag("generic_map.png", class: "map-image", style: "border-radius: 50%; width: 120px; height: `120`px;") %>
+<div class="main-container">
+  <h1>Your upcoming bookings</h1>
+  <div class="container">
+    <div class="slider-container">
+      <div class="slider-group">
+          <div class="card">
+            <div class="content-img">
+              <img src="https://cdn.pixabay.com/photo/2014/07/31/00/30/vw-beetle-405876_1280.jpg" class="card-img-top" alt="...">
+            </div>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%= @booking.space.name %>
+                </h5>
+                <h6 class="card-text">
+                  <%= @booking.space.location %>
+                </h6>
+                <h6 class="card-text">
+                  Start date:
+                  <%= @booking.start %>
+                </h6>
+                <h6 class="card-text">
+                  End date:
+                  <%= @booking.end %>
+                </h6>
+                  <div class="card-button">
+                  <%= link_to "Check out this space", space_path, class: "button" %>
+                  </div>
+              </div>
+                <div class="map-container">
+                <%= image_tag("generic_map.png", class: "map-image", style: "border-radius: 50%; width: 120px; height: `120`px;") %>
+                </div>
+              </div>
+          </div>
+      </div>
+        <div>
+          <%= link_to "Edit this booking", edit_booking_path(@booking) %> |
+          <%= link_to "Back to bookings", bookings_path %>
+        </div>
+    </div>
   </div>
-</div>
-
-<div>
-  <%= link_to "Edit this booking", edit_booking_path(@booking) %> |
-  <%= link_to "Back to bookings", bookings_path %>
-
-  <%= button_to "Cancel this booking", @booking, method: :delete %>
 </div>

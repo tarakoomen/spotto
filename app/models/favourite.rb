@@ -1,6 +1,6 @@
 class Favourite < ApplicationRecord
-  belongs_to :space
-  belongs_to :user
+  # belongs_to :space
+  # belongs_to :user
 
   validates :space_id, presence: true
   validates :user_id, presence: true
