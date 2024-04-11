@@ -1,2 +1,14 @@
-<h1>Bookings#edit</h1>
-<p>Find me in app/views/bookings/edit.html.erb</p>
+<h1>Edit my booking</h1>
+
+<%= render "form", booking: @booking, button_text: "edit booking" %>
+
+ <%= button_to "Cancel this booking", @booking,
+    data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+    class: "ms-3 text-danger"
+%>
+
+<br>
+
+<div>
+  <%= link_to "Back to my bookings", bookings_path %>
+</div>

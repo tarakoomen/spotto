@@ -1,19 +1,20 @@
 class BookingsController < ApplicationController
-  before_action :set_space, only: [:new, :create]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user_id: current_user)
   end
 
   def new
+    @space = Space.find(params[:space_id])
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.space_id = @space.id
+    @booking.space_id = params[:space_id]
     @booking.user = current_user
-    if @booking.save
+    if @booking.save!
       redirect_to bookings_path, notice: 'Booking was successfully created.'
     else
       render :new, status: :unprocessable_entity
@@ -21,15 +22,13 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find(params[:id])
+    # @review = Review.new(space: @space)
   end
 
   def edit
-    @booking = Booking.find(params[:id])
   end
 
   def update
-    @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
       redirect_to booking_path(@booking)
     else
@@ -38,18 +37,17 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to bookings_path, notice: 'Booking was successfully destroyed.'
   end
 
   private
 
-  def booking_params
-    params.require(:booking).permit(:start, :end)
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 
-  def set_space
-    @space = Space.find(params[:space_id])
+  def booking_params
+    params.require(:booking).permit(:start, :end)
   end
 end
