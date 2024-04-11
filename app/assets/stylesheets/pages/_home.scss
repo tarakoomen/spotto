@@ -9,8 +9,8 @@
 .card {
   border-radius: 10px;
   overflow: hidden; /* Ensure content doesn't overflow rounded corners */
-  box-shadow: 15px 15px 1px $spotto-sand;
-  border: 1px solid white;
+  box-shadow: 17px 17px 0px $spotto-sand;
+  border: 1px solid black;
 }
 
 .col {
@@ -19,7 +19,6 @@
 
 .slider-container {
   padding: 15px;
-  margin-bottom: 8rem;
 }
 
 .main-container {
@@ -61,7 +60,8 @@
 }
 
 .button:hover {
-  background-color: darken($spotto-sky, 10%); /* Darken the background color on hover */
+  background-color: darken($spotto-sky, 10%);
+  box-shadow: 5px 5px 0px black;
 }
 
 .home-intro {
@@ -103,5 +103,6 @@
 }
 
 .big-button:hover {
-  background-color: darken($spotto-sky, 10%); /* Darken the background color on hover */
+  background-color: darken($spotto-sky, 10%);
+  box-shadow: 15px 15px 0px black;
 }
