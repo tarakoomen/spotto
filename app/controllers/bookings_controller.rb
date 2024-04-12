@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  # before_action :authenticate_user!
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -22,7 +23,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    # @review = Review.new(space: @space)
+    @space = Space.find(params[:space_id])
   end
 
   def edit

@@ -2,15 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  get "my_spaces", to: "pages#my_spaces"
-
   resources :spaces do
     resources :bookings, only: [:new, :create]
     # resources :favourites, only: [:index, :new, :create]
   end
 
   resources :bookings do
-    resources :reviews, only: [:new, :create, :edit, :update]
+    resources :reviews, only: [:new, :create]
   end
 
   resources :reviews, only: [:destroy]
@@ -22,4 +20,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  get "my_spaces", to: "pages#my_spaces"
+  get "dashboard", to: "pages#dashboard"
 end
