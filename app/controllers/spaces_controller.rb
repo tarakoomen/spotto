@@ -20,6 +20,7 @@ class SpacesController < ApplicationController
   end
 
   def show
+    # @reviews = @space.reviews
   end
 
   def edit
