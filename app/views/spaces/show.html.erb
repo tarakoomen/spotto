@@ -1,47 +1,33 @@
 <div class="container">
-  <div class="d-flex justify-content-end">
-    <%= link_to "Back to all parking spaces", root_path %>
-  </div>
-    <div class="card m-4 bg-white box-shadow border-0" style="width: 23rem;">
-    <%= image_tag("driveway.jpg", class: "card-img-top") %>
-      <div class="card-body">
-        <div>
-          <h5 class="card-title">
-            <%= @space.name %>
-          </h5>
-
-          <h6 class="card-text">
-            <%= @space.location %>
-          </h6>
-
-          <h6 class="card-text">
-            <%= @space.description %>
-          </h6>
-          <br>
-          <div class="d-flex justify-content-between">
-            <h6 class="card-subtitle mb-2 text-muted">
-              $<%= @space.price %>
-            </h6>
-            <%= link_to "Book this space", new_space_booking_path(@space), class:"card-link" %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="d-flex h-100">
+        <div class="card m-4 bg-white box-shadow border-1 flex-grow-1" style="width: 23rem;">
+          <%= image_tag @space.image_url, class: "card-img-top", alt: "Space Image" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= @space.name %></h5>
+            <h6 class="card-text"><%= @space.location %></h6>
+            <h6 class="card-text"><%= @space.description %></h6>
+            <div class="d-flex justify-content-between">
+              <h6 class="card-subtitle mb-2 text-muted">$<%= @space.price %></h6>
+              <div>
+                <%= link_to "Book this space", new_space_booking_path(@space), class:"card-link" %>
+              </div>
+              <div>
+                <%= link_to "Back to all parking spaces", spaces_path, class:"card-link" %>
+              </div>
+            </div>
           </div>
         </div>
-          <%# <div>
-            <h3>Reviews</h3>
-            <% if @space.reviews.empty? %>
-              <%# <small><em class="text-muted">Be the first one to review this space</em></small> %>
-            <%# <% end %>
-            <%# <% @space.reviews.each do |review| %>
-              <%# <div> %>
-                <%# <% review.rating.times do %>
-                  <%# <i class="fas fa-star star-yellow"></i> %>
-                <%# <% end %>
-                <%# <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) ago</em></small> %>
-                <%# <p><%= review.rating</p> %>
-                <%# <p><%= review.content</p> %>
-              <%# </div> %>
-              <%# <hr> %>
-            <%# <% end %>
-          <%# </div> %>
       </div>
     </div>
+
+    <div class="col-md-6">
+      <div class="d-flex h-100">
+        <div class="card m-4 bg-white box-shadow border-1 flex-grow-1" style="width: 23rem; margin-left: -15px; padding-bottom: 0;">
+          <%= image_tag asset_path('map1.jpg'), class: "card-img-top img-fluid", alt: "Map Image", style: "object-fit: cover; width: 100%; height: 100%;" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

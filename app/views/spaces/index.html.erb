@@ -1,6 +1,6 @@
 <div class="container">
-  <h1>Check out all of our current car space listings</h1>
-  <div class="row row-cols-1 row-cols-md-2 g-4 m-2 justify-content-center">
+  <h3 class="home-intro">Check out all of our current car space listings</h3>
+    <div class="row row-cols-1 row-cols-md-2 g-4 m-2 justify-content-center">
         <%= form_tag spaces_path, method: :get, class:"d-flex my-3" do %>
         <%= text_field_tag :query,
             params[:query],
@@ -10,30 +10,31 @@
         <%= submit_tag "Search", class: "btn btn-primary" %>
         <% end %>
   </div>
-  <div class="row row-cols-1 row-cols-md-2 g-4 m-2 justify-content-center">
+</div>
+  <div class="slider-group-index">
     <% @spaces.each do |space| %>
-      <div class="card m-4 bg-white box-shadow border-0" style="width: 23rem;">
-      <%= image_tag("driveway.jpg", class: "card-img-top") %>
+      <div class="card">
+        <%= image_tag space.image_url, class: "card-img-top", alt: "Space Image" %>
         <div class="card-body">
           <div>
-          <h5 class="card-title">
-            <%= space.name %>
-          </h5>
-
-          <h6 class="card-text">
-            <%= space.location %>
-          </h6>
-
-          <br>
-          <div class="d-flex justify-content-between">
-            <h6 class="card-subtitle mb-2 text-muted">
-              $<%= space.price %>
+            <h6 class="card-title">
+              <%= space.name %>
             </h6>
-            <%= link_to "More details", space, class:"card-link" %>
+
+            <h6 class="card-text">
+              <%= space.location %>
+            </h6>
+
+            <br>
+            <div class="d-flex justify-content-between">
+              <h6 class="card-subtitle mb-2 text-muted">
+                $<%= space.price %>
+              </h6>
+              <%= link_to "More details", space, class: "card-link" %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     <% end %>
   </div>
 </div>

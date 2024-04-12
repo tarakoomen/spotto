@@ -3,7 +3,7 @@
   grid-template-columns: repeat(3, 1fr); /* Three columns */
   grid-auto-rows: auto; /* Automatically adjust row height */
   gap: 55px; /* Adjust the gap between cards */
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .card {
@@ -11,7 +11,7 @@
   overflow: hidden; /* Ensure content doesn't overflow rounded corners */
   box-shadow: 17px 17px 0px $spotto-sand;
   border: 1px solid black;
-  margin-bottom: 5rem;
+  margin-bottom: 20px;
   padding-bottom: 2rem;
 }
 
@@ -72,7 +72,7 @@
   font-weight: 200;
   margin: 0 auto;
   max-width: 800px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .spotto-hl-text {

@@ -1,2 +1,28 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.container-index {
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center contents horizontally */
+}
+
+.slider-group-index {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-auto-rows: auto; /* Automatically adjust row height */
+  gap: 35px; /* Adjust the gap between cards */
+  margin-left: 140px;
+  margin-right: 130px;
+  margin-bottom: 200px;
+  margin-top: 40px;
+}
+
+.slider-group-index .card {
+  height: 400px; /* Allow the card height to adjust based on content */
+  width: 350px; /* Adjust the width of the cards */
+}
+
+.slider-group-index .card .card-img-top {
+  height: 200px; /* Set a fixed height for the images */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire space */
+}
