@@ -1,5 +1,15 @@
 <div class="container">
   <h1>Check out all of our current car space listings</h1>
+  <div class="col-sm-8">
+        <%= form_tag spaces_path, method: :get, class:"d-flex my-3" do %>
+        <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a space"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+  </div>
   <div class="row row-cols-1 row-cols-md-2 g-4 m-2 justify-content-center">
     <% @spaces.each do |space| %>
       <div class="card m-4 bg-white box-shadow border-0" style="width: 23rem;">
@@ -15,7 +25,6 @@
           </h6>
 
           <br>
-
           <div class="d-flex justify-content-between">
             <h6 class="card-subtitle mb-2 text-muted">
               $<%= space.price %>

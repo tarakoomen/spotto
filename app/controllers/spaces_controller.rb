@@ -2,7 +2,11 @@ class SpacesController < ApplicationController
   before_action :set_space, only: %i[ show edit update destroy ]
 
   def index
-    @spaces = Space.all
+    if params[:query].present?
+      @spaces = Space.search_by_location_and_price(params[:query])
+    else
+      @spaces = Space.all
+    end
   end
 
   def new
@@ -47,5 +51,12 @@ class SpacesController < ApplicationController
 
   def space_params
     params.require(:space).permit(:name, :description, :location, :price, :photo)
+  end
+end
+
+def index
+  @movies = Movie.all
+  if params[:query].present?
+    @movies = @movies.where(title: params[:query])
   end
 end
