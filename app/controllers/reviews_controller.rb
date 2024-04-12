@@ -2,30 +2,28 @@ class ReviewsController < ApplicationController
   # before_action :authenticate_user!
 
   def new
-    @space = Space.find(params[:space_id])
+    # @space = Space.find(params[:space_id])
     @booking = Booking.find(params[:booking_id])
     @review = Review.new
   end
 
   def create
-    @review = Review.new(review_params)
-    @review.user = current_user
+    # @space = Space.find(params[:space_id])
     @booking = Booking.find(params[:booking_id])
+    @review = Review.new(review_params)
     @review.booking = @booking
+    @review.user = current_user
     if @review.save
-      redirect_to booking_path(@booking)
+      redirect_to space_path(@space)
     else
       render "bookings/show", status: :unprocessable_entity
     end
   end
 
-  def edit
-  end
-
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to list_path(@review.list)
+    redirect_to booking_path(@review.booking)
   end
 
   private
