@@ -25,23 +25,6 @@
             <%= link_to "Book this space", new_space_booking_path(@space), class:"card-link" %>
           </div>
         </div>
-          <%# <div>
-            <h3>Reviews</h3>
-            <% if @space.reviews.empty? %>
-              <%# <small><em class="text-muted">Be the first one to review this space</em></small> %>
-            <%# <% end %>
-            <%# <% @space.reviews.each do |review| %>
-              <%# <div> %>
-                <%# <% review.rating.times do %>
-                  <%# <i class="fas fa-star star-yellow"></i> %>
-                <%# <% end %>
-                <%# <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) ago</em></small> %>
-                <%# <p><%= review.rating</p> %>
-                <%# <p><%= review.content</p> %>
-              <%# </div> %>
-              <%# <hr> %>
-            <%# <% end %>
-          <%# </div> %>
       </div>
     </div>
 </div>

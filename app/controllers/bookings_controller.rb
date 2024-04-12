@@ -22,7 +22,6 @@ class BookingsController < ApplicationController
   end
 
   def show
-    # @review = Review.new(space: @space)
   end
 
   def edit

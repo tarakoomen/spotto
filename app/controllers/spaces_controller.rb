@@ -1,4 +1,5 @@
 class SpacesController < ApplicationController
+  # before_action before_action :authenticate_user!
   before_action :set_space, only: %i[ show edit update destroy ]
 
   def index
@@ -17,14 +18,14 @@ class SpacesController < ApplicationController
     @space = Space.new(space_params)
     @space.user = current_user
     if @space.save
-      redirect_to space_path(@space)
+      redirect_to my_spaces_path
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def show
-    # @reviews = @space.reviews
+    # @review = Review.new(booking: @booking)
   end
 
   def edit
@@ -40,7 +41,7 @@ class SpacesController < ApplicationController
 
   def destroy
     @space.destroy!
-    redirect_to spaces_url, notice: "Space was successfully destroyed.", status: :see_other
+    redirect_to my_spaces_url, notice: "Space was successfully destroyed.", status: :see_other
   end
 
   private
