@@ -14,16 +14,13 @@
             <%= space.location %>
           </h6>
 
-          <h6 class="card-text">
-            <%= space.description %>
-          </h6>
           <br>
 
           <div class="d-flex justify-content-between">
             <h6 class="card-subtitle mb-2 text-muted">
               $<%= space.price %>
             </h6>
-            <%= link_to "Book this space", new_space_booking_path(space), class:"card-link" %>
+            <%= link_to "More details", space, class:"card-link" %>
           </div>
         </div>
       </div>
