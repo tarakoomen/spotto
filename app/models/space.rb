@@ -11,8 +11,8 @@ class Space < ApplicationRecord
   validates :price, presence: true, numericality: { greater_than: 0 }
 
   include PgSearch::Model
-  pg_search_scope :search_by_location_and_price,
-    against: [ :location, :price ],
+  pg_search_scope :search_by_name_location_and_price,
+    against: [ :name, :location, :price ],
     using: {
       tsearch: { prefix: true }
     }

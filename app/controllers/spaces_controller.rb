@@ -3,7 +3,7 @@ class SpacesController < ApplicationController
 
   def index
     if params[:query].present?
-      @spaces = Space.search_by_location_and_price(params[:query])
+      @spaces = Space.search_by_name_location_and_price(params[:query])
     else
       @spaces = Space.all
     end
