@@ -31,9 +31,15 @@
         </div>
         <% end %>
         <%= link_to "Add an additional car space listing", new_space_path %>
+
       </div>
     <% else %>
     <span class="dropdown-item-text">You currently don't have any car spaces listed. Do you want to create a new listing?</span>
     <%= link_to "Create a new listing", new_space_path %>
-    <% end %>
+ <%# <button type="button" class="btn btn-flat" data-bs-toggle="modal" data-bs-target="#spacesModal">
+Create a new listing
+</button> %>
+<%= link_to "Create a new listing!!!!", edit_space_path(space), class: "card-link", data: { bs_toggle: "modal", bs_target: "#spacesModal" } %>
+
+<% end %>
 </div>

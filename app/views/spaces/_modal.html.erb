@@ -1,0 +1,16 @@
+<div class="modal fade" id="spacesModal" tabindex="-1" aria-labelledby="spacesModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="spacesModalLabel">New personal car space listing</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= render "form", space: @space %>
+       </div>
+      <div class="modal-footer">
+        <%= link_to "Back to my personal car space listings", my_spaces_path, class: "btn btn-secondary" %>
+       </div>
+    </div>
+  </div>
+</div>
