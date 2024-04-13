@@ -1,5 +1,4 @@
 class SpacesController < ApplicationController
-  # before_action before_action :authenticate_user!
   before_action :set_space, only: %i[ show edit update destroy ]
 
   def index
@@ -25,7 +24,6 @@ class SpacesController < ApplicationController
   end
 
   def show
-    # @review = Review.new(booking: @booking)
   end
 
   def edit
