@@ -2,7 +2,7 @@
 
 <%= render "form", booking: @booking, button_text: "edit booking" %>
 
- <%= button_to "Cancel this booking", @booking,
+ <%= button_to "Cancel this booking", @booking.space,
     data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
     class: "ms-3 text-danger"
 %>
