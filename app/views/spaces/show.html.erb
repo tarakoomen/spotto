@@ -1,27 +1,9 @@
 <div class="container">
-        <div class="reviews-body">
-          <% @space.reviews.each do |review| %>
-            <div class="review-card">
-              <p><%= review.content %></p>
-              <div data-rating="<%= review.rating %>">
-                <% (1..5).each do |i| %>
-                  <% if i <= review.rating %>
-                    <i class="fa-solid fa-star star active"></i>
-                  <% else %>
-                    <i class="fa-solid fa-star star"></i>
-                  <% end %>
-                <% end %>
-              </div>
-              <% capped_rating = [review.rating, 5].min %>
-              <h6>Rating: <%= capped_rating %></h6>
-            </div>
-          <% end %>
-        </div>
   <div class="row">
     <div class="col-md-6">
       <div class="d-flex h-100">
         <div class="card m-4 bg-white box-shadow border-1 flex-grow-1" style="width: 23rem;">
-          <%= image_tag @space.image_url, class: "card-img-top", alt: "Space Image" %>
+          <%= @space.image_url.nil? ? cl_image_tag(@space.photo.key) : (image_tag @space.image_url, class: "card-img-top", alt: "Car Spot Image") %>
           <div class="card-body">
             <h5 class="card-title"><%= @space.name %></h5>
             <h6 class="card-text"><%= @space.location %></h6>
@@ -29,7 +11,7 @@
             <div class="d-flex justify-content-between">
               <h6 class="card-subtitle mb-2 text-muted">$<%= @space.price %></h6>
               <div>
-                <%= link_to "Book this space", new_space_booking_path(@space), class:"card-link" %>
+                <%= link_to "Book this car spot", new_space_booking_path(@space), class:"card-link" %>
               </div>
               <div>
                 <%= link_to "Back to all spots", spaces_path, class:"card-link" %>
@@ -48,4 +30,29 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="container" justify-content: center; align-items: center;>
+
+  <div class="card m-4 bg-white box-shadow border-1 flex-grow-1 padding-2" style="width: 24rem;">
+  <h5 class="card-title" style="padding: 10px;">Recent Review:</h5>
+  <% @space.reviews.each do |review| %>
+    <div class="review-card" style="padding: 10px;"> <!-- Adding padding of 10px -->
+      <p><%= review.content %></p>
+      <div data-rating="<%= review.rating %>" style="padding: 5px;"> <!-- Adding padding of 5px -->
+        <% (1..5).each do |i| %>
+          <% if i <= review.rating %>
+            <i class="fa-solid fa-star star active"></i>
+          <% else %>
+            <i class="fa-solid fa-star star"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <% capped_rating = [review.rating, 5].min %>
+      <h6>Rating: <%= capped_rating %></h6>
+    </div>
+  <% end %>
+</div>
+
+<%= image_tag("sneaky.png", class: "sneaky-image", alt: "Sneaky Image") %>
 </div>
