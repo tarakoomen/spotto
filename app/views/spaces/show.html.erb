@@ -1,4 +1,22 @@
 <div class="container">
+        <div class="reviews-body">
+          <% @space.reviews.each do |review| %>
+            <div class="review-card">
+              <p><%= review.content %></p>
+              <div data-rating="<%= review.rating %>">
+                <% (1..5).each do |i| %>
+                  <% if i <= review.rating %>
+                    <i class="fa-solid fa-star star active"></i>
+                  <% else %>
+                    <i class="fa-solid fa-star star"></i>
+                  <% end %>
+                <% end %>
+              </div>
+              <% capped_rating = [review.rating, 5].min %>
+              <h6>Rating: <%= capped_rating %></h6>
+            </div>
+          <% end %>
+        </div>
   <div class="row">
     <div class="col-md-6">
       <div class="d-flex h-100">
@@ -14,7 +32,7 @@
                 <%= link_to "Book this space", new_space_booking_path(@space), class:"card-link" %>
               </div>
               <div>
-                <%= link_to "Back to all parking spaces", spaces_path, class:"card-link" %>
+                <%= link_to "Back to all spots", spaces_path, class:"card-link" %>
               </div>
             </div>
           </div>
@@ -25,7 +43,7 @@
     <div class="col-md-6">
       <div class="d-flex h-100">
         <div class="card m-4 bg-white box-shadow border-1 flex-grow-1" style="width: 23rem; margin-left: -15px; padding-bottom: 0;">
-          <%= image_tag asset_path('map1.jpg'), class: "card-img-top img-fluid", alt: "Map Image", style: "object-fit: cover; width: 100%; height: 100%;" %>
+          <%= image_tag asset_path('map8.jpg'), class: "card-img-top img-fluid", alt: "Map Image", style: "object-fit: cover; width: 100%; height: 100%;" %>
         </div>
       </div>
     </div>

@@ -1,10 +1,15 @@
 <% if @spaces.any? %>
     <div class="container">
-      <h1>Manage your personal car spaces</h1>
+      <h1>Manage your personal car spots</h1>
       <div class="row row-cols-1 row-cols-md-2 g-4 m-2 justify-content-center">
         <% @spaces.each do |space| %>
           <div class="card m-4 bg-white box-shadow border-0" style="width: 23rem;">
-          <%= image_tag("driveway.jpg", class: "card-img-top") %>
+        <!--  <% if space.photo.attached? %>
+              <%= cl_image_tag(space.photo.key) %>
+          <% else %>
+            <%= image_tag('driveway.jpg', class: "card-img-top") %>
+          <% end %> -->
+          <%= space.photo.attached? ? cl_image_tag(space.photo.key) : image_tag('driveway.jpg', class: "card-img-top") %>
             <div class="card-body">
               <div>
               <h5 class="card-title">
@@ -24,16 +29,16 @@
                 <h6 class="card-subtitle mb-2 text-muted">
                   $<%= space.price %>
                 </h6>
-                <%= link_to "Edit my personal car space", edit_space_path(space), class:"card-link" %>
+                <%= link_to "Edit my personal car spot", edit_space_path(space), class:"card-link" %>
               </div>
             </div>
           </div>
         </div>
         <% end %>
-        <%= link_to "Add an additional car space listing", new_space_path %>
+        <%= link_to "Add an additional car spot listing", new_space_path %>
       </div>
     <% else %>
-    <span class="dropdown-item-text">You currently don't have any car spaces listed. Do you want to create a new listing?</span>
+    <span class="dropdown-item-text">You currently don't have any car spots listed. Do you want to create a new listing?</span>
     <%= link_to "Create a new listing", new_space_path %>
     <% end %>
 </div>
