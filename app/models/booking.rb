@@ -1,6 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :space
   belongs_to :user
+  has_many :reviews, dependent: :destroy
 
   validates :start, presence: true
   validates :end, presence: true

@@ -1,11 +1,11 @@
 <div class="container">
-  <h3 class="home-intro">Check out all of our current car space listings</h3>
+  <h3 class="home-intro">Check out all of our current car spot listings</h3>
     <div class="row row-cols-1 row-cols-md-2 g-4 m-2 justify-content-center">
         <%= form_tag spaces_path, method: :get, class:"d-flex my-3" do %>
         <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Find a space"
+            placeholder: "Find a spot"
         %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
         <% end %>
@@ -14,7 +14,7 @@
   <div class="slider-group-index">
     <% @spaces.each do |space| %>
       <div class="card">
-        <%= image_tag space.image_url, class: "card-img-top", alt: "Space Image" %>
+        <%= space.image_url.nil? ? cl_image_tag(space.photo.key) : (image_tag space.image_url, class: "card-img-top", alt: "Car Spot Image") %>
         <div class="card-body">
           <div>
             <h6 class="card-title">

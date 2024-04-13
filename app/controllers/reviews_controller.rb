@@ -1,20 +1,16 @@
 class ReviewsController < ApplicationController
-  # before_action :authenticate_user!
-
   def new
-    # @space = Space.find(params[:space_id])
     @booking = Booking.find(params[:booking_id])
     @review = Review.new
   end
 
   def create
-    # @space = Space.find(params[:space_id])
     @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
     @review.booking = @booking
-    @review.user = current_user
+    # TO DO: add reference to user_id in reviews table @review.user = current_user
     if @review.save
-      redirect_to space_path(@space)
+      redirect_to space_path(@booking.space_id)
     else
       render "bookings/show", status: :unprocessable_entity
     end
@@ -29,6 +25,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:content, :rating)
+    params.require(:review).permit(:content, :rating, :booking_id)
   end
 end
