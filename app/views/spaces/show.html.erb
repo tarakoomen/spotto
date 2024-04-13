@@ -12,7 +12,6 @@
               <h6 class="card-subtitle mb-2 text-muted">$<%= @space.price %></h6>
               <div>
 <%= link_to "Book this space", new_space_booking_path(@space), class: "card-link", data: { bs_toggle: "modal", bs_target: "#bookingModal" } %>
-
 <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
