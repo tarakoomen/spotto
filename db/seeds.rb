@@ -4,7 +4,7 @@ require 'faker'
 # the validation needs a user to exist to be able
 # to create spaces
 users = []
-20.times do |i|
+40.times do |i|
   users << User.create!(
     email: Faker::Internet.email,
     password: "password"
@@ -63,6 +63,13 @@ space_names = [
 space_names.shuffle!
 
 urls = [
+  "https://financialexpresswpcontent.s3.amazonaws.com/uploads/2019/01/china-incline-car-parking.jpg",
+  "https://da28rauy2a860.cloudfront.net/outdoordesign.com.au/contents/5864/20180306102902_889.jpg",
+  "https://www.sanstonecreations.com/wp-content/uploads/2018/04/201803-brick-entry-wall-and-matching-mailbox-2-1024x682.jpg",
+  "https://d8uprjylqiycc.cloudfront.net/media/klevu_images/1318X1130/a/s/astel_q-bic_garage_34b_-_ukseta_v1.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFTXareGKlazQxjlAUUtgw2veLsjLgXNu1Xw&s",
+  "https://d.newsweek.com/en/full/558114/03-03-knightrider-02.jpg",
+  "https://i.pinimg.com/736x/9e/be/6e/9ebe6e4b33b62b279aeee946fdd168cb.jpg",
   "https://i.pinimg.com/736x/16/f5/17/16f517a4b1ec6e526a8b81be53326be7.jpg",
   "https://www.artafloor.com.au/wp-content/uploads/2023/08/herringbone-flooring-french-luxury-mansion.jpeg",
   "https://www.victorycarpark.com.au/images/about-img.jpg",
@@ -77,7 +84,7 @@ urls = [
   "https://parkplusinc.com/wp-content/uploads/2020/06/C5043-1.jpg",
   "https://qph.cf2.quoracdn.net/main-qimg-4d71e61b77b8a932f59771ff10067dac",
   "https://i.pinimg.com/originals/18/aa/7a/18aa7aa98facee135cdf26ab78bddae3.jpg",
-  "https://static.wikia.nocookie.net/knightrider/images/4/49/KITT.PNG/revision/latest?cb=20180608091652&path-prefix=en",
+  "https://i0.wp.com/www.zeroto60times.com/wp-content/uploads/2012/03/funny-garage-door-murals.jpg?quality=99&strip=all",
   "https://nicspaull.files.wordpress.com/2012/04/car-3.jpg",
   "https://media.angi.com/s3fs-public/home-concrete-driveway-474423342.jpg?impolicy=leadImage",
   "https://i.dailymail.co.uk/i/pix/2017/05/06/15/40023A7D00000578-0-image-a-83_1494082480504.jpg",
@@ -87,7 +94,7 @@ urls = [
 
 
 # Seed 20 spaces
-20.times do |index|
+40.times do |index|
   available = true
   price = rand(2..7) * 10 # Generate a random number between 2 and 7 and multiply by 10
   Space.create!(
