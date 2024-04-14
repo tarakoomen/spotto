@@ -116,7 +116,7 @@ sleep(1)
 puts "    Hi Yumi & Tara & Matt !!"
 puts " "
 sleep(1)
-puts "     20 x spaces created 👍"
+puts "     40 x car spots created 👍"
 puts " "
 sleep(1)
 puts "_🚙_🏎️_🚕_🚓_🛵_🚗_🚙_🏎️_🚕__🚗_🚙"
